@@ -13,20 +13,20 @@ Para los contratados:
 horasTrabajadas × valorHora
 Implementar los métodos correspondientes utilizando @Override.
 Crear un programa que permita probar ambas clases. */
-public class EmpleadoPlanta extends Empleado{
-    private float sueldoBase;
-    private float antiguedad;
-    //constructor
-    public EmpleadoPlanta(float sueldoBase,float antiguedad,int dni,String nombre){
-      super (dni,nombre);
-      this.sueldoBase=sueldoBase;
-      this.antiguedad=antiguedad;
-      
+public class EmpleadoContratado extends Empleado {
+    private float horasTrabajadas;
+    private float valorHora;
+
+    public EmpleadoContratado (int dni,String nombre, float horasTrabajadas,float valorHora){
+        super (dni,nombre);
+        this.horasTrabajadas=horasTrabajadas;
+        this.valorHora=valorHora;
     }
-     //ya existe en Empleado, Empleado dijo "todo el que herede de mí, tiene que saber calcular su sueldo, a su manera" — y acá, EmpleadoPlanta cumple esa promesa con su fórmula específica (sueldo base más un porcentaje por antigüedad).
     @Override 
     public double calcularSueldo(){
-      return sueldoBase +(sueldoBase*0.02*antiguedad);
+        return horasTrabajadas*valorHora;
+
     }
 
+    
 }
