@@ -14,10 +14,10 @@ Solicitar al usuario la cantidad de días y mostrar el costo del alquiler de cad
 No utilizar if ni switch para determinar qué cálculo corresponde a cada vehículo.
 Como ampliación, agregar una clase Camioneta a la jerarquía y utilizarla mediante el mismo
 mecanismo de polimorfismo. */
-public class Motocilceta extends Vehiculo {
+public class Motocicleta extends Vehiculo {
     private double tarifaPorDia;
 
-    public Motocilceta(String patente, String marca,String modelo,double tarifaPorDia){
+    public Motocicleta(String patente, String marca,String modelo,double tarifaPorDia){
         super(patente,marca,modelo);
         this.tarifaPorDia=tarifaPorDia;
     }

@@ -21,7 +21,7 @@ public abstract class Vehiculo {
     private String modelo;
 
     //constructor
-    public Vehiculo(Strign patente,String marca, String modelo){
+    public Vehiculo(String patente,String marca, String modelo){
         this.patente=patente;
         this.marca=marca;
         this.modelo=modelo;

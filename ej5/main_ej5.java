@@ -15,6 +15,25 @@ Como ampliación, agregar una clase Camioneta a la jerarquía y utilizarla media
 mecanismo de polimorfismo. */
 package prog1_tp1.ej5;
 
+import java.util.Scanner;
+
 public class main_ej5 {
-    
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);//para ingresar
+
+        Auto auto1 = new Auto("AA12BB", "FIAT", "UNO", 5000);
+        Motocicleta moto1 = new Motocicleta("CC456DD", "Honda", "Wave", 2000);
+        AutoElectrico electrico1 = new AutoElectrico("EE789FF", "Tesla", "Model 3", 8000, 1500);
+        Camioneta camioneta1 = new Camioneta("GG012HH", "Toyota", "Hilux", 7000);
+
+        Vehiculo [] vehiculos={auto1,moto1,electrico1,camioneta1};
+
+        System.out.println("Ingrese la cantidad de dias de alquiler:");
+        int dias= sc.nextInt();
+
+        for(Vehiculo v: vehiculos){
+            System.out.println(v.getMarca()+" "+v.getModelo()+"("+v.getPatente()+")- Costo alquiler: " + v.calcularAlquiler(dias));
+        }
+
+    }
 }

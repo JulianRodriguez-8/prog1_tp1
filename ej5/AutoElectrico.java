@@ -14,6 +14,25 @@ Solicitar al usuario la cantidad de días y mostrar el costo del alquiler de cad
 No utilizar if ni switch para determinar qué cálculo corresponde a cada vehículo.
 Como ampliación, agregar una clase Camioneta a la jerarquía y utilizarla mediante el mismo
 mecanismo de polimorfismo. */
-public class AutoElectrico {
-    
+public class AutoElectrico extends Vehiculo { //para heredar de otras
+    private double tarifaPorDia;
+    private double recargoPorDia; //le doy un costo extra
+    public AutoElectrico (String patente, String marca,String modelo,double tarifaPorDia,double recargoPorDia){
+        super(patente,marca,modelo);
+        this.tarifaPorDia=tarifaPorDia;
+        this.recargoPorDia=recargoPorDia;
+    }
+
+    //get
+    public double getRecargoPorDia(){
+        return recargoPorDia;
+    }
+
+    @Override 
+    public double calcularAlquiler(int dias){
+        //uso el tarifa por dias y le sumo recargo
+        return (tarifaPorDia*dias)+ (recargoPorDia*dias);
+
+    }
+
 }
